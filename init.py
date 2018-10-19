@@ -42,6 +42,11 @@ RP.connect()
 
 # Getting Applications
 def get_applications():
+    """
+    To allow Windows to execute powershell files you first need to allow it access. You can learn how to do this here;
+    https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6
+    """
+
     p = subprocess.Popen(["powershell.exe",
                           "C:\\Users\\maxla\\PycharmProjects\\discordVLC\\getprocess.ps1"],
                          stdout=sys.stdout)
