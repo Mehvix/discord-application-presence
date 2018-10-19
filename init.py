@@ -1,7 +1,9 @@
 # coding=utf-8
 import vlc
+import sys
 import json
 import time
+import subprocess
 import pypresence
 
 # Opens config.json
@@ -31,14 +33,19 @@ y = []
 for _ in range(int(len(str(custom_client_id)) + 13)):  # 13 because that's the length of 'Client ID:...'
     y.append("=")
 print("".join(y))
+print("\n")
 
 # Defining and Connecting
 RP = pypresence.Presence(client_id=custom_client_id, pipe=custom_pipe, loop=custom_loop, handler=custom_handler)
 RP.connect()
 
 
-# VLC Settings
-instance = vlc.Instance()
+# Getting Applications
+def get_applications():
+    p = subprocess.Popen(["powershell.exe",
+                          "C:\\Users\\maxla\\PycharmProjects\\discordVLC\\getprocess.ps1"],
+                         stdout=sys.stdout)
+    print(p.communicate())
 
 
 def start():
@@ -61,7 +68,9 @@ def start():
               instance=False
               )
 
+
 start()
+get_applications()
 
 while True:
     time.sleep(15)
