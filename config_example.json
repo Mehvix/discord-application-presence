@@ -1,7 +1,8 @@
 {
   "how to get client id": "https://i.imgur.com/rMUcW8H.png",
-  "custom_client_id": 502251826408298808,
-  "custom_pipe": 0,
-  "custom_loop": null,
-  "custom_handler": null
+  "client_id": 502251826408298808,
+  "pipe": 0,
+  "loop": null,
+  "handler": null,
+  "update_rate": 15
 }
