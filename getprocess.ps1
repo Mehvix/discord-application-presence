@@ -1,1 +1,0 @@
-Get-Process | where {$_.mainWindowTitle} |format-table id, name, mainwindowtitle
