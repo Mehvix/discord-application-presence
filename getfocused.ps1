@@ -6,4 +6,4 @@ Add-Type $code -Name Utils -Namespace Win32
 $hwnd = [Win32.Utils]::GetForegroundWindow()
 Get-Process |
     Where-Object { $_.mainWindowHandle -eq $hwnd } |
-    Select-Object processName, MainWindowTItle, MainWindowHandle
+    Select-Object ProcessName, MainWindowTitle
