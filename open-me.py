@@ -10,6 +10,9 @@ do a few things;
 2.) To properly read the data I would recommend setting the default encoding of Powershell to UTF-8. You can learn
     how to do that here:
     https://stackoverflow.com/questions/40098771/changing-powershells-default-output-encoding-to-utf-8
+
+Also, if you an icon to be displayed it needs to be uploaded here:
+https://discordapp.com/developers/applications/<Your Client ID>/rich-presence/assets
 """
 
 import vlc
@@ -67,7 +70,12 @@ def get_focused():
                                 "C:\\Users\\maxla\\PycharmProjects\\discordVLC\\getfocused.ps1"],
                                stdout=subprocess.PIPE,
                                stderr=subprocess.PIPE)
-    out = process.stdout.read().decode(encoding='UTF-8').rstrip()  # Decoding - make sure you've read the readme
+    try:
+        out = process.stdout.read().decode(encoding='UTF-8').rstrip()  # Decoding - make sure you've read the readme
+    except UnicodeDecodeError:
+        start()
+        return
+
     print(out)
     out = str(out).split("\n")  # Making each line into a list
     out = out[3:]  # Removing the first 3 which are all just notations
@@ -98,7 +106,7 @@ def get_focused():
     image = name.lower()  # todo add reddit, github, khan academny,
     if name == "Chrome":
         websites = ["YouTube", "Drive", "Sheets", "Docs", "Slides", "Gmail", "4chan", "Stack", "Udemy", "Khan",
-                    "Syndicate", "HSReplay.net", "TypeRacer"]
+                    "Syndicate", "HSReplay.net", "TypeRacer", "Twitter", "Twitch"]
         for page in websites:
             if page in details:
                 image = page.lower()
@@ -120,12 +128,6 @@ def get_focused():
 
 
 def start():
-    """
-    If you want to upload media it needs to be uploaded here:
-    https://discordapp.com/developers/applications/<Your Client ID>/rich-presence/assets
-    and you need to use the same filename here as you did when uploading it.
-    """
-
     # Actual stuff being displayed
     RP.update(state="https://github.com/Mehvix/discord-application-presence/",
               details="Not currently in a application",
