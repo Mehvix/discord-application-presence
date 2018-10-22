@@ -19,6 +19,7 @@ import time
 import win32gui
 import subprocess
 import pypresence
+import webbrowser
 import re#eeeeeeeeee
 from subprocess import Popen
 
@@ -91,13 +92,13 @@ def get_focused():
         start()
         return
 
-
     if name == "Discord":
         details = details.replace("??", "")
 
-    image = name.lower()  # todo get Reddit and Github working ()
+    image = name.lower()  # todo add reddit, github, khan academny,
     if name == "Chrome":
-        websites = ["YouTube", "Drive", "Sheets", "Docs", "Slides", "Gmail", "4chan", "Stack"]
+        websites = ["YouTube", "Drive", "Sheets", "Docs", "Slides", "Gmail", "4chan", "Stack", "Udemy", "Khan",
+                    "Syndicate", "HSReplay.net", "TypeRacer"]
         for page in websites:
             if page in details:
                 image = page.lower()
