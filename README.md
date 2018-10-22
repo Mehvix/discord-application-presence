@@ -11,4 +11,4 @@ do a few things;
 
 Also, if you an icon to be displayed it needs to be uploaded here:
 
-https://discordapp.com/developers/applications/  *Your Client ID*  /rich-presence/assets
+https://discordapp.com/developers/applications/`Your Client ID`/rich-presence/assets
