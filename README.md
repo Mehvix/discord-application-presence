@@ -1,3 +1,6 @@
+[![pypresence](https://img.shields.io/badge/using-pypresence-00bb88.svg?style=for-the-badge&logo=discord&logoWidth=20)](https://github.com/qwertyquerty/pypresence)
+
+
 This application allows you to display what application you are running to Discord with Rich Presence. This is done by
 running Powershell scripts that get your current process running. To run Powershell files in Python, you first need to
 do a few things;
