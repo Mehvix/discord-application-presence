@@ -13,21 +13,15 @@ do a few things;
 
 Also, if you an icon to be displayed it needs to be uploaded here:
 https://discordapp.com/developers/applications/<Your Client ID>/rich-presence/assets
+
+If you can't figure something out or stuff is broke, feel free to DM me on Discord, Mehvix#7172
 """
 
-import vlc
-import sys
 import json
-import time
-import win32gui
 import subprocess
+import time
+
 import pypresence
-import webbrowser
-import re#eeeeeeeeee
-from subprocess import Popen
-
-# from gi.repository import Playerctl, GLib
-
 
 # Opens config.json
 with open('config.json') as config:
