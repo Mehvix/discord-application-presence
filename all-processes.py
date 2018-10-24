@@ -74,6 +74,7 @@ def get_focused():
     out = str(out).split("\n")  # Making each line into a list
     out = out[3:]  # Removing the first 3 which are all just notations
 
+    #  Okay, so this code sorta works but it's done much better in vlc.py
     split = str("".join(out)).split("  ")
     newsplit = []
     for x in split:  # Removes all spaces in out
